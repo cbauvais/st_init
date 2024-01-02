@@ -4,7 +4,7 @@ import numpy as np
 import altair as alt
 
 ## Exo 1: st.button
-st.header('st.button') ## Création d'un titre
+st.header('st.button') ## Création d'un titre, 
 
 if st.button('say hello'): ## Say hello: texte affiché sur le bouton (label)
     st.write('Hello, *world!* :sunglasses:') ## Si le bouton est cliqué, retourne True si le boutton est cliqué, False sinon
