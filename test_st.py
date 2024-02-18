@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import altair as alt
-from datetime import time, datetime
+import datetime
 
 ## Exo 1: st.button
 st.header('st.button') ## Création d'un titre, 
@@ -61,10 +61,42 @@ st.header("st.line_chart")
 
 st.subheader("Line Chart")
 
-my_df = pd.DataFrame()
-my_df['a'] = np.random.randint(28, size = 5)
-my_df['b'] = np.random.randint(28, size = 5)
-my_df['c'] = np.random.randint(28, size = 5)
+chart_data = pd.DataFrame(
+     np.random.randn(20, 3),
+     columns=['a', 'b', 'c'])
 
-st.line_chart(my_df)
+# st.write(chart_data)
 
+st.line_chart(chart_data)
+
+## Exo 5: st.selectbox
+# affichage d'un widget de sélection
+
+st.header("st.selectbox")
+fav_color = st.selectbox("What is your favorite color?", ("Blue", "Red", "Green"))
+st.write("Your favorite color is", fav_color)
+
+## Exo 6: st.multiselect
+# Affiche un widget multiselect
+
+st.header("st.multiselect")
+fav_colors = st.multiselect("What are your favorite colors?", ["Yellow", "Red", "Blue", "Green"], ["Yellow", "Red"])
+st.write("You selected:", fav_colors)
+
+## Exo 7: st.checkbox
+# Widget de type checkbox
+
+st.header("st.checkbox")
+
+st.write("What would you like to order?")
+
+ice_cream = st.checkbox("Ice cream")
+coffee = st.checkbox("Coffee")
+cola = st.checkbox("Cola")
+
+if ice_cream:
+    st.write("Great! here is some more")
+if coffee:
+    st.write("Ok for coffee")
+if cola:
+    st.write("Here you go")
