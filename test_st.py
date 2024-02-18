@@ -53,3 +53,18 @@ st.write('You are scheduled for : ', appointment)
 st.subheader("Datetime slider")
 # Ne fonctionne plus ??
 
+
+## Exo 4: st.line_chart
+# graphique linéaire
+
+st.header("st.line_chart")
+
+st.subheader("Line Chart")
+
+my_df = pd.DataFrame()
+my_df['a'] = np.random.randint(28, size = 5)
+my_df['b'] = np.random.randint(28, size = 5)
+my_df['c'] = np.random.randint(28, size = 5)
+
+st.line_chart(my_df)
+
