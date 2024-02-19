@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 import altair as alt
 import datetime
+# import pandas_profiling
+# from streamlit_pandas_profiling import st_profile_report
 
 ## Exo 1: st.button
 st.header('st.button') ## Création d'un titre, 
@@ -100,3 +102,28 @@ if coffee:
     st.write("Ok for coffee")
 if cola:
     st.write("Here you go")
+
+# ## Exo 8: Components
+# st.header('`streamlit_pandas_profiling`')
+
+# df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv')
+
+# pr = df.profile_report()
+# st_profile_report(pr)
+    
+
+## Exo 9: st.latex
+# Affiche des expressions mathématiques au format LaTeX
+    
+st.header("st.latex")
+
+st.latex(r'''
+     ar + ar^2 + ar^3 + \cdots + ar^{n-1} =
+     \sum_{k=0}^{n-1} ar^k =
+     a \left(\frac{1-r^{n}}{1-r}\right)
+     ''')
+
+
+## Créer une side bar (menu)
+number = st.sidebar.slider('Select a number:', 0, 10, 5)
+st.write('Selected number from slider widget is:', number)
