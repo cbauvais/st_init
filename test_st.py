@@ -128,8 +128,26 @@ st.latex(r'''
 number = st.sidebar.slider('Select a number:', 0, 10, 5)
 st.write('Selected number from slider widget is:', number)
 
-## Exo 10: st.secrets
-# permet de stocker des informations confidentielles
+# ## Exo 10: st.secrets
+# # permet de stocker des informations confidentielles
 
-st.header("st.secrets")
-st.write(st.secrets["message"])
+# st.header("st.secrets")
+# st.write(st.secrets["message"])
+
+## Exo 11: st.file_uploader
+# widget qui permet d'uploader des fichiers
+
+st.header("st.file_uploader")
+
+st.subheader("Input CSV")
+file = st.file_uploader("Choose a file")
+
+if file is not None:
+    my_df = pd.read_csv(file)
+    st.subheader("Dataframe")
+    st.write(my_df)
+
+    st.subheader("Stats")
+    st.write(my_df.describe())
+else:
+    st.info("Upload a CSV up here")
