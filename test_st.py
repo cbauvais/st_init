@@ -127,3 +127,9 @@ st.latex(r'''
 ## Créer une side bar (menu)
 number = st.sidebar.slider('Select a number:', 0, 10, 5)
 st.write('Selected number from slider widget is:', number)
+
+## Exo 10: st.secrets
+# permet de stocker des informations confidentielles
+
+st.header("st.secrets")
+st.write(st.secrets["message"])
